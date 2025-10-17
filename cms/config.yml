@@ -27,4 +27,5 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Embed URL", name: "embedUrl", widget: "string" }
+      # THIS IS THE FIX: A hidden field that automatically adds the 'pages' tag.
       - { label: "tags", name: "tags", widget: "hidden", default: "pages" }
