@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: emrantusho/saasdeep5
+  branch: main
+  auth_type: netlify
+
+local_backend: true
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Site Configuration"
+        name: "config"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Site Title / Logo Text", name: "logoText", widget: "string" }
+          - { label: "Logo Image", name: "logoImage", widget: "image", required: false }
+
+  - name: "pages"
+    label: "Showcase Pages"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Embed URL", name: "embedUrl", widget: "string" }
+      - { label: "tags", name: "tags", widget: "hidden", default: "pages" }
